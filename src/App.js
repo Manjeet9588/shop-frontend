@@ -156,7 +156,7 @@ function App() {
 
       {/* NEW FOOTER ADDED HERE */}
       <footer style={{ marginTop: '3rem', padding: '1rem', backgroundColor: '#203040', color: 'white', textAlign: 'center' }}>
-        <p>Developed by: <b>Manjeet (R10061)</b> & <b>Asmit Sharma (R9674)</b></p>
+        <p>Developed by: <b>Manjeet (23EE2421045)</b> & <b>Asmit Sharma (23EE2421012)</b></p>
         <p style={{ fontSize: '0.8rem' }}>Minor Project Submission 2025</p>
       </footer>
 
