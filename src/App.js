@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link, useParams } from 'react-router-dom';
-// --- COMPONENT 1: Product Details Page (Still uses local data for now) ---
+
+// --- COMPONENT 1: Product Details Page ---
 function ProductScreen({ onAdd }) {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -59,17 +60,16 @@ function ProductScreen({ onAdd }) {
   );
 }
 
-// --- COMPONENT 2: Home Page (NOW FETCHING FROM SERVER!) ---
+// --- COMPONENT 2: Home Page ---
 function HomeScreen() {
-  const [products, setProducts] = useState([]); // 1. State to hold server data
+  const [products, setProducts] = useState([]); 
 
-  // 2. useEffect to fetch data when page loads
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://manjeet-shop-api.onrender.com/api/products'); // Talk to backend
+        const response = await fetch('https://manjeet-shop-api.onrender.com/api/products'); 
         const data = await response.json();
-        setProducts(data); // Save data to state
+        setProducts(data); 
       } catch (err) {
         console.log("Error fetching data:", err);
       }
@@ -79,10 +79,9 @@ function HomeScreen() {
 
   return (
     <div style={{ padding: '2rem' }}>
-      <h1>Featured Products (from Server)</h1>
+      <h1>Featured Products</h1>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}>
         
-        {/* If no products yet, show loading */}
         {products.length === 0 && <div>Loading products from server...</div>}
 
         {products.map((product) => (
@@ -139,6 +138,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      {/* HEADER CHANGED HERE: Now says "My Awesome Shop" */}
       <header style={{ backgroundColor: '#203040', padding: '1rem', color: 'white', display: 'flex', justifyContent: 'space-between' }}>
         <Link to="/" style={{ color: 'white', textDecoration: 'none', fontSize: '1.5rem', fontWeight: 'bold' }}>My Awesome Shop</Link>
         <Link to="/cart" style={{ color: 'white', textDecoration: 'none', fontSize: '1.2rem' }}>
