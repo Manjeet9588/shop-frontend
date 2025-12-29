@@ -1,4 +1,4 @@
-# Manjeet Shop (E-Commerce Mini Project)
+# My Awesome Shop (E-Commerce Mini Project)
 
 ### Project Description
 A full-stack e-commerce application built with the MERN stack (MongoDB, Express, React, Node.js). It allows users to view products, add them to a cart, and manage a shopping list.
