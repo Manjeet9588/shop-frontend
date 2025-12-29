@@ -138,13 +138,14 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* HEADER CHANGED HERE: Now says "My Awesome Shop" */}
+      {/* Header */}
       <header style={{ backgroundColor: '#203040', padding: '1rem', color: 'white', display: 'flex', justifyContent: 'space-between' }}>
         <Link to="/" style={{ color: 'white', textDecoration: 'none', fontSize: '1.5rem', fontWeight: 'bold' }}>My Awesome Shop</Link>
         <Link to="/cart" style={{ color: 'white', textDecoration: 'none', fontSize: '1.2rem' }}>
           Cart 🛒 {cartItems.length > 0 && <span style={{ backgroundColor: 'red', borderRadius: '50%', padding: '2px 8px', marginLeft: '5px', fontSize: '0.9rem' }}>{cartItems.length}</span>}
         </Link>
       </header>
+      
       <main>
         <Routes>
           <Route path="/" element={<HomeScreen />} />
@@ -152,6 +153,13 @@ function App() {
           <Route path="/cart" element={<CartScreen cartItems={cartItems} onRemove={onRemove} />} />
         </Routes>
       </main>
+
+      {/* NEW FOOTER ADDED HERE */}
+      <footer style={{ marginTop: '3rem', padding: '1rem', backgroundColor: '#203040', color: 'white', textAlign: 'center' }}>
+        <p>Developed by: <b>Manjeet (R10061)</b> & <b>Asmit Sharma (R9674)</b></p>
+        <p style={{ fontSize: '0.8rem' }}>Minor Project Submission 2025</p>
+      </footer>
+
     </BrowserRouter>
   );
 }
